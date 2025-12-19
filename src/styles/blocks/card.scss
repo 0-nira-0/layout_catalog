@@ -1,23 +1,25 @@
 .catalog {
+  --count-of-columns: 1;
+
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
-  --count-of-columns: 1;
   padding: 50px 40px;
 
   display: grid;
   grid-template-columns: repeat(var(--count-of-columns), 200px);
-  row-gap: 46px;
-  column-gap: 48px;
+  gap: 46px 48px;
   justify-content: center;
 
   @media screen and (min-width: 488px) {
     --count-of-columns: 2;
   }
+
   @media screen and (min-width: 768px) {
     --count-of-columns: 3;
   }
+
   @media screen and (min-width: 1024px) {
     --count-of-columns: 4;
   }
@@ -39,11 +41,6 @@
 
   &:hover {
     transform: scale(1.2);
-
-    .card__title:hover {
-      transition: all 0.3s;
-      color: #34568b;
-    }
   }
 
   &__title {
@@ -52,6 +49,11 @@
     line-height: 18px;
     font-weight: 500;
     color: #060b35;
+  }
+
+  &__title:hover {
+    transition: all 0.3s;
+    color: #34568b;
   }
 
   &__code {
