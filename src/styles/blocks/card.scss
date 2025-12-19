@@ -8,7 +8,7 @@
   padding: 50px 40px;
 
   display: grid;
-  grid-template-columns: repeat(var(--count-of-columns), 200px);
+  grid-template-columns: repeat(var(--count-of-columns), $card-width);
   gap: 46px 48px;
   justify-content: center;
 
@@ -30,8 +30,8 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 206px 16px 16px;
-  width: 200px;
-  height: 408px;
+  width: $card-width;
+  height: $card-height;
   max-width: $card-product-width;
   background-image: url(../images/imac.jpeg);
   background-size: $image-size-width $image-size-height;
@@ -39,22 +39,23 @@
   background-position: center 32px;
   transition: all 0.3s;
 
-  &:hover {
-    transform: scale(1.2);
-  }
-
   &__title {
     margin: 0;
     font-size: 12px;
     line-height: 18px;
     font-weight: 500;
-    color: #060b35;
+    color: $color-card;
+  }
+  
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      transition: all 0.3s;
+      color: #34568b;
+    }
   }
 
-  &__title:hover {
-    transition: all 0.3s;
-    color: #34568b;
-  }
 
   &__code {
     margin-top: 4px;
@@ -79,7 +80,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    color: #060b35;
+    color: $color-card;
   }
 
   &__button-label {
@@ -114,7 +115,7 @@
   }
 
   &__review-amount {
-    color: #060b35;
+    color: $color-card;
     line-height: 14px;
     align-self: flex-end;
   }
